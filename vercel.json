@@ -2,7 +2,7 @@
   "version": 2,
   "build": {
     "command": "echo 'No build needed'",
-    "output": "public",  // Points to your static files directory
+    "output": "public",
     "env": {
       "NODE_ENV": "production"
     }
@@ -19,7 +19,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"  // Serves from public directory
+      "dest": "/index.html"
     }
   ]
 }
