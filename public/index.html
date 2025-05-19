@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caption Styler</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter :wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Caption Styler & Subtitle Generator</h1>
+
+    <input type="file" id="videoUpload" accept="video/*">
+    
+    <div class="video-wrapper">
+      <video id="videoPreview" controls></video>
+      <div id="captionOverlay"></div>
+    </div>
+  </div>
+
+  <div class="style-controls">
+    <h2>Style Captions</h2>
+
+    <label>
+      Font:
+      <select id="fontSelect">
+        <option value="Inter">Inter</option>
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+      </select>
+    </label>
+
+    <label>
+      Font Size:
+      <input type="number" id="fontSize" min="10" max="100" value="24"> px
+    </label>
+
+    <label>
+      Font Color:
+      <input type="color" id="fontColor" value="#ffffff">
+    </label>
+  </div>
+
+  <div class="viral-tools">
+    <h2>📢 Viral Tools</h2>
+
+    <label>
+      Platform:
+      <select id="platformSelect">
+        <option value="tiktok">TikTok</option>
+        <option value="instagram">Instagram</option>
+        <option value="twitter">Twitter/X</option>
+        <option value="youtube">YouTube Shorts</option>
+      </select>
+    </label>
+
+    <button id="generatePromo">Generate Caption & Hashtags</button>
+
+    <div class="promo-results">
+      <h3>Generated Viral Caption:</h3>
+      <p id="viralCaption">—</p>
+
+      <h3>Suggested Hashtags:</h3>
+      <p id="hashtagList">—</p>
+    </div>
+
+    <button id="downloadSubtitles">⬇️ Download Captions (.srt)</button>
+    <button id="downloadWithCaptions">⬇️ Download Video with Captions</button>
+  </div>
+
+  <div id="loading" class="loading-overlay">
+    <div class="spinner"></div>
+    <p>Processing video...</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
