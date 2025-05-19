@@ -1,13 +1,25 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "api/generate/route.js",
-      "use": "@vercel/node"
+  "build": {
+    "command": "echo 'No build needed'",
+    "output": "public",  // Points to your static files directory
+    "env": {
+      "NODE_ENV": "production"
     }
-  ],
+  },
+  "functions": {
+    "api/generate/route.js": {
+      "runtime": "edge"
+    }
+  },
   "routes": [
-    { "src": "/api/generate", "dest": "/api/generate" },
-    { "src": "/(.*)", "dest": "/" }
+    {
+      "src": "/api/generate",
+      "dest": "/api/generate/route.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"  // Serves from public directory
+    }
   ]
 }
